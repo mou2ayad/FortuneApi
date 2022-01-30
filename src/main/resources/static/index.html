@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+</style>
+</head>
+<body>
+
+<h1>Welcome to the fortune page </h1>
+<p><span id="exEpigram"></span></p>
+
+<button class="button button1" onclick="getEpigram();">Get new epigram</button>
+<button class="button button2" onclick="location.reload();">Reload the page</button>
+<script>
+   
+    getEpigram();
+    
+    function getEpigram()
+    {
+        let url = "http://localhost:8080/getEpigram";
+        fetch (url)
+        .then(x => x.text())
+        .then(y => document.getElementById("exEpigram").innerHTML = y)
+        .catch(function(error) {
+        console.log(error); });
+    }
+</script>
+</body>
+</html>
