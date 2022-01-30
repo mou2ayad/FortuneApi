@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import org.printing.fortuneApi.contract.IEpigramProvider;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service
+@Scope("singleton")
 public class StaticEpigramProvider implements IEpigramProvider{
     private static final ArrayList<String> epigrams;
 

@@ -31,7 +31,7 @@
     
     function getEpigram()
     {
-        let url = "http://localhost:8080/getEpigram";
+        let url = "/getEpigram";
         fetch (url)
         .then(x => x.text())
         .then(y => document.getElementById("exEpigram").innerHTML = y)
